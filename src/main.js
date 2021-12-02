@@ -10,6 +10,12 @@ import './assets/fonts/iconfont.css'
 import axios from 'axios'
 // 配置请求的根路径
 axios.defaults.baseURL = 'https://lianghj.top:8888/api/private/v1/'
+// 配置请求拦截器
+axios.interceptors.request.use((config) => {
+  // 为请求头对象，添加token验证的Authorization字段
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
 // 挂载
 Vue.prototype.$http = axios
 Vue.config.productionTip = false

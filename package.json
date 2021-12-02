@@ -19,6 +19,7 @@
     "vue/singleline-html-element-content-newline": "off",
     "vue/multiline-html-element-content-newline": "off",
     "indent": "off",
+    "no-unused-vars": "off",
     "vue/html-self-closing": [
       "error",
       {
