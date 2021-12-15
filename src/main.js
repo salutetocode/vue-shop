@@ -5,6 +5,7 @@ import router from './router/index.js'
 import './plugins/element.js'
 // 导入全局样式表
 import './assets/css/global.css'
+import TreeTable from 'vue-table-with-tree-grid'
 // 导入字体图标
 import './assets/fonts/iconfont.css'
 import axios from 'axios'
@@ -19,7 +20,8 @@ axios.interceptors.request.use((config) => {
 // 挂载
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
-
+// 全局注册
+Vue.component('tree-table', TreeTable)
 new Vue({
   router,
   render: (h) => h(App)

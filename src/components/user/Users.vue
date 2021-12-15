@@ -208,7 +208,7 @@ export default {
       callback(new Error('请输入合法的手机号码'))
     }
     return {
-      // 获取用户列表的参数头像
+      // 获取用户列表的参数条件
       queryInfo: {
         // 查询参数
         query: '',

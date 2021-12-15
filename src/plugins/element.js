@@ -29,7 +29,8 @@ import {
   Tag,
   Tree,
   Select,
-  Option
+  Option,
+  Cascader
 } from 'element-ui'
 // 注册为全局组件
 Vue.use(Button)
@@ -59,6 +60,7 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Cascader)
 // Message弹框提示组件需要全局挂载
 // 全局挂载以后this就可以直接访问到了
 Vue.prototype.$message = Message
