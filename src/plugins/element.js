@@ -40,6 +40,8 @@ import {
   Checkbox,
   Upload
 } from 'element-ui'
+import Timeline from './timeline/index.js'
+import TimelineItem from './timeline-item/index.js'
 // 注册为全局组件
 Vue.use(Button)
 Vue.use(Form)
@@ -77,6 +79,8 @@ Vue.use(Step)
 Vue.use(CheckboxGroup)
 Vue.use(Checkbox)
 Vue.use(Upload)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 // Message弹框提示组件需要全局挂载
 // 全局挂载以后this就可以直接访问到了
 Vue.prototype.$message = Message
