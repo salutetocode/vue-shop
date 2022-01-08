@@ -1,6 +1,7 @@
 // 入口文件
 import Vue from 'vue'
 import App from './App.vue'
+import './plugins/element.js'
 // 导入全局样式表
 import './assets/css/global.css'
 import TreeTable from 'vue-table-with-tree-grid'
