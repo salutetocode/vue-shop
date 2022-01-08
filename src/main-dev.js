@@ -1,7 +1,6 @@
 // 入口文件
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router/index.js'
 import './plugins/element.js'
 // 导入全局样式表
 import './assets/css/global.css'
@@ -15,12 +14,24 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
+// 导入nprogress对应的js和css
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+import router from './router/index.js'
 // 配置请求的根路径
 axios.defaults.baseURL = 'https://lianghj.top:8888/api/private/v1/'
 // 配置请求拦截器
+// 在request拦截器中展示进度条，使用NProgress.start();因为request拦截器说明发起了网络请求
 axios.interceptors.request.use((config) => {
+  NProgress.start()
   // 为请求头对象，添加token验证的Authorization字段
   config.headers.Authorization = window.sessionStorage.getItem('token')
+  // 在最后必须return config
+  return config
+})
+// 在response拦截器中隐藏进度条，使用NProgress.done();
+axios.interceptors.response.use((config) => {
+  NProgress.done()
   return config
 })
 // 挂载
